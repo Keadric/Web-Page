@@ -1,0 +1,36 @@
+Body { background: #00FF99; }
+
+nav { background: #888888; }
+
+.navbar { background: #DDDDDD; }
+
+.fa { font-size: 18px; }
+
+.blog-post { background: #FFFFFF; }
+
+hr { 
+  border-color: #00FF99;
+  margin: 3px 10px 7px 10px;
+}
+
+.blog-post { 
+  Padding: 10px;
+  margin: 0px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+}
+
+header { font-size: 26px; }
+
+.twitter-container li { margin: 10px; }
+
+.twitter-container { background: #FFFFFF; border-radius: 6px; }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  background: #FFFFFF;
+  text-align: right;
+}
