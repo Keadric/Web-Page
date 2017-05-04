@@ -1,0 +1,12 @@
+__Feature List__
+
+  - Get User Cookie and Randomly Generate a Hex Color for that User
+	to use as a background for the Site
+  - Have a friendly comment loading screen for the user
+  - Find a friendly comment/idiom database to shuffle in webpage
+  - Get working blog database to write to
+  - Set Up Varius Pages that Load
+  - Cool Stuff: What is it?
+  - Make Projects a Drop-Down Menu
+  - Fill out About Section
+  - Set Proper Youtube Link

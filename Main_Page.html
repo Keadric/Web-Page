@@ -1,7 +1,16 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet prefetch" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
-  <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+    crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
   <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="CSS/Main_Stylesheet.css">
 </head>
@@ -20,7 +29,20 @@
           </div>
           <ul class="nav navbar-nav">
             <li> <a href="#"> Cool Stuff </a></li>
-            <li><a href=""> Projects </a></li>
+            <li class="dropdown">
+            
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle"> Projects <b class="caret"></b> </a>
+              
+              <ul class="dropdown-menu">
+              
+                <li><a href="#"> Object 1 </a></li>
+                <li><a href="#"> Object 2 </a></li>
+                <li><a href="#"> Object 3 </a></li>
+                <li><a href="#" style="color: #AAAAAA;"> All Objects </a></li>
+              
+              </ul>
+            
+            </li>
             <li><a href=""> About </a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -32,33 +54,36 @@
       </nav>
       
       <div class="row container-fluid">
-        <div class="blog-container col-md-9">
+        <div class="blog-container col-xs-9 col-sm-9 col-md-9 col-lg-9">
       
-          <div class="blog-post">
-          <header class="blog-header" style="font-size: 26px;"> Titles </header>
-          <hr>
-          <section class="blog-body" style="margin-bottom: 5px;"> words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words </section>
-          <footer class="blog-footer" style="text-align: right; color: grey;"> Date | Author </footer>
+            <div class="blog-post">
+              <header class="blog-header" style="font-size: 26px;"> Titles </header>
+              <hr>
+              <section class="blog-body" style="margin-bottom: 5px;"> words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words </section>
+              <footer class="blog-footer" style="text-align: right; color: grey;"> Date | Author </footer>
+            </div>
+            
+            <div class="blog-post">
+              <header class="blog-header" style="font-size: 26px;"> Titles </header>
+              <hr>
+              <section class="blog-body" style="margin-bottom: 5px;"> words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words </section>
+              <footer class="blog-footer" style="text-align: right; color: grey;"> Date | Author </footer>
+            </div>
+            
+            <div class="blog-post">
+              <header class="blog-header" style="font-size: 26px;"> Titles </header>
+              <hr>
+              <section class="blog-body" style="margin-bottom: 5px;"> words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words </section>
+              <footer class="blog-footer" style="text-align: right; color: grey;"> Date | Author </footer>
+            </div>
+      
         </div>
         
-            <div class="blog-post">
-          <header class="blog-header" style="font-size: 26px;"> Titles </header>
-          <hr>
-          <section class="blog-body" style="margin-bottom: 5px;"> words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words </section>
-          <footer class="blog-footer" style="text-align: right; color: grey;"> Date | Author </footer>
-        </div>
+        <div class="twitter-container col-xs-3 col-sm-3 col-md-3 col-lg-3">
         
-            <div class="blog-post">
-          <header class="blog-header" style="font-size: 26px;"> Titles </header>
-          <hr>
-          <section class="blog-body" style="margin-bottom: 5px;"> words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words </section>
-          <footer class="blog-footer" style="text-align: right; color: grey;"> Date | Author </footer>
-        </div>
-      
-      </div>
-        <div class="twitter-container col-md-3">
           <a class="twitter-timeline" href="https://twitter.com/BrettGameDev">Tweets by BrettGameDev</a>
           <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        
         </div>
       </div>
       

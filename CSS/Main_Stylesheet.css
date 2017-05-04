@@ -2,16 +2,21 @@ Body { background: #00FF99; }
 
 nav { background: #888888; }
 
+header { font-size: 26px; }
+
+hr { border-color: #00FF99; margin: 3px 10px 7px 10px; }
+
 .navbar { background: #DDDDDD; }
 
 .fa { font-size: 18px; }
 
-.blog-post { background: #FFFFFF; }
+.fa-github-alt { color: #00C654; }
 
-hr { 
-  border-color: #00FF99;
-  margin: 3px 10px 7px 10px;
-}
+.fa-youtube-play { color: #E52D27; }
+
+.fa-twitter { color: #4099FF; }
+
+.blog-post { background: #FFFFFF; }
 
 .blog-post { 
   Padding: 10px;
@@ -20,17 +25,6 @@ hr {
   border-radius: 6px;
 }
 
-header { font-size: 26px; }
-
 .twitter-container li { margin: 10px; }
 
 .twitter-container { background: #FFFFFF; border-radius: 6px; }
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 20px;
-  background: #FFFFFF;
-  text-align: right;
-}
