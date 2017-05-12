@@ -5,13 +5,10 @@ __Feature List__
   - Have a friendly comment loading screen for the user
   - Find a friendly comment/idiom database to shuffle in webpage
   - Get working blog database to write to
-  - Set Up Varius Pages that Load
-  - Cool Stuff: What is it?
-  - Set Pages for Projects Drop-Down Menu
+  - Add Content Creator Functions that load Data
   - Fill out About Section
-  - Set Proper Youtube Link
-  - Add a button that leads to a post creator
-  - Customize section that writesto JSON file
-  - Can edit About section and will write from the most recent object
-  - Color Highlight Links
-  - Pictures Folder
+	- About will write from most recent object (Check Dates)
+  - Set Proper Youtube Link (When Account is Created
+  - Add a button that leads to a post creator (With Secret Login At The Top)
+  	- Writes to JSON file
+  	- Can edit About section
