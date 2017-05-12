@@ -2,19 +2,25 @@ Body { background: #00FF99; }
 
 nav { background: #888888; }
 
-header { font-size: 26px; }
-
 hr { border-color: #00FF99; margin: 3px 10px 7px 10px; }
 
-.navbar { background: #DDDDDD; }
+#github-button:hover { color: #00C654; }
+
+#youtube-button:hover { color: #E52D27; }
+
+#twitter-button:hover { color: #4099FF; }
+
+#error { padding: 10px; border-radius: 6px; background: #FFFFFF; color: #DD3300; font-size: 16px; }
 
 .fa { font-size: 18px; }
 
-.fa-github-alt { color: #00C654; }
+.navbar { background: #DDDDDD; }
 
-.fa-youtube-play { color: #E52D27; }
+.blog-header { font-size: 26px; }
 
-.fa-twitter { color: #4099FF; }
+.blog-body { margin-bottom: 5px; }
+
+.blog-footer { text-align: right; color: #999999; }
 
 .blog-post { background: #FFFFFF; }
 
@@ -28,3 +34,4 @@ hr { border-color: #00FF99; margin: 3px 10px 7px 10px; }
 .twitter-container li { margin: 10px; }
 
 .twitter-container { background: #FFFFFF; border-radius: 6px; }
+

@@ -7,6 +7,11 @@ __Feature List__
   - Get working blog database to write to
   - Set Up Varius Pages that Load
   - Cool Stuff: What is it?
-  - Make Projects a Drop-Down Menu
+  - Set Pages for Projects Drop-Down Menu
   - Fill out About Section
   - Set Proper Youtube Link
+  - Add a button that leads to a post creator
+  - Customize section that writesto JSON file
+  - Can edit About section and will write from the most recent object
+  - Color Highlight Links
+  - Pictures Folder
