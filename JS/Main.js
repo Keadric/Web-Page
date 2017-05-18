@@ -1,7 +1,7 @@
 // Javascript File
 
 
-
+console.log( sortProjects( data.projects ) );
 
 
 
@@ -27,7 +27,7 @@ function fillDropdownMenu () {
     var projectList = sortProjects( data.projects );
     var insertStr = "";
     
-    console.log( projectList );
+    console.log( "Drop Down: ", projectList );
     
     dropdownMenu.innerHTML = "";
     
@@ -49,8 +49,10 @@ function fillDropdownMenu () {
 // Numerical Sort of Project Ratings
 function sortProjects ( projectList ) { 
 
-    projectList.sort( function ( a, b ) { return a.rating + b.rating; });
-    return projectList;
+    return projectList.sort( function ( a, b ) { 
+        // console.log( "A: ", a.rating, "B: ", b.rating ); 
+        return b.rating - a.rating; 
+    });
 
 }
 
@@ -67,7 +69,8 @@ function renderProject ( projectId, mainPage ) {
     ;
     
     $("#content").append( contentProject );
-    if ( mainPage == false ) { renderHeader( project.name ) };
+    if ( mainPage != true ) { renderHeader( project.name ) }
+    else { renderHeader("Clever Remark!!!") };
 
 }
 
@@ -78,6 +81,8 @@ function renderMainPage () {
     var projectList = sortProjects( data.projects );
     var navbarStr = "<a class='navbar-brand' href='javascript:void(0)' onclick='renderProject( " 
                         + projectList[0].id 
+                        + ", "
+                        + true
                         + " )'>"
                         + projectList[0].name
                         + "</a> " 
@@ -86,18 +91,14 @@ function renderMainPage () {
     content.innerHTML = "", navbarHeader.innerHTML = "";
     
     renderProject( projectList[0].id, true );
-    renderHeader( "Clever Remark!!!" );
+    renderHeader( "Hello There!" );
     navbarHeader.innerHTML = navbarStr;
 
 
 
 }
 
-function renderHeader ( header ) { 
-
-    document.getElementById("header-text").innerHTML = header;
-
-}
+function renderHeader ( header ) { document.getElementById("header-text").innerHTML = header; }
 
 
 
