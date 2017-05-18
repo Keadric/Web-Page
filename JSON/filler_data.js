@@ -47,8 +47,68 @@ var data = {
 		"author": "Brett Svendsen",
 		"photo_url": ""
 		
-	}
+	},
 	
+    "projects": [
+    
+        { 
+            "id": "-1",
+            "name": "Proper Layout",
+            "url": "",
+            "desc": "",
+            "rating": 0
+        },
+        
+        { 
+            "id": "0",
+            "name": "J-Srogger",
+            "url": "missing",
+            "desc": "Frogger Made Only Using JS and CSS",
+            "rating": 3
+        },
+        
+        { 
+            "id": "1",
+            "name": "Word Up",
+            "url": "missing",
+            "desc": "A LaunchCode JS project",
+            "rating": 2
+        },
+        
+        { 
+            "id": "2",
+            "name": "Flicklist",
+            "url": "missing",
+            "desc": "A LaunchCode JS project",
+            "rating": 4
+        },
+        
+        { 
+            "id": "100",
+            "name": "Wu",
+            "url": "https://en.wikipedia.org/wiki/Eastern_Wu",
+            "desc": "The Kingdom of Eastern Wu",
+            "rating": 11
+        },
+        
+        { 
+            "id": "101",
+            "name": "Shu",
+            "url": "https://en.wikipedia.org/wiki/Shu_Han",
+            "desc": "The Kingdom of Shu Han",
+            "rating": 12
+        },
+        
+        { 
+            "id": "102",
+            "name": "Wei",
+            "url": "https://en.wikipedia.org/wiki/Cao_Wei",
+            "desc": "The Kingdom of Cao Wei",
+            "rating": 10
+        }
+    
+    ]
+    
 	
 };
 

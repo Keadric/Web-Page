@@ -1,55 +1,120 @@
 // Javascript File
 
-/* var BLOG_MODEL = {
-	titles: [],
-	contents: [],
-	dates: [],
-	authors: [],
-	js_stamp: "Made in Javascript"
-} */
 
-console.log( data );
+
+
 
 
 function renderBlog () {
 
-	blogFiller();
-	twitterFiller();
-	$("#header-text").text("Brett's Blog");
+	blogBox();
+	twitterBox();
+	renderHeader( "Blog" );
 
 }
 
 function renderAbout () {
-    
+
     renderBlank();
-    $("#header-text").text("About");
-    
-    
+    renderHeader( "About" );
+
 }
+
+function fillDropdownMenu () { 
+
+    var liElem = "<li>", liElemClose = "</li>", linkElemClose = "</a>";
+    var dropdownMenu = document.getElementById("dropdown");
+    var projectList = sortProjects( data.projects );
+    var insertStr = "";
+    
+    console.log( projectList );
+    
+    dropdownMenu.innerHTML = "";
+    
+    // Get the 3 most popular Projects
+    for ( idx = 0; idx < 3 ; idx++ ) {
+        var projectLink = "<a hre'javascript:void(0) onclick='renderProject( " + projectList[ idx ].id + " )'>";
+        var projectName = projectList[ idx ].name;
+        
+        projectLink = liElem + projectLink + projectName + linkElemClose + liElemClose;
+        insertStr += projectLink;
+        console.log( insertStr );
+    }
+
+    insertStr += "<li><a href='javascript:void(0)' onclick='renderBlank()' style='color: #AAAAAA;'> All Projects </a></li>";
+    dropdownMenu.innerHTML = insertStr;
+
+}
+
+// Numerical Sort of Project Ratings
+function sortProjects ( projectList ) { 
+
+    projectList.sort( function ( a, b ) { return a.rating + b.rating; });
+    return projectList;
+
+}
+
+function renderProject ( projectId, mainPage ) { 
+
+    var content = document.getElementById("content");
+    content.innerHTML = "";
+    project = data.projects.find( function( project ){ return project.id == projectId; });
+    
+    var contentProject = $("<iframe></iframe>")
+                                .attr( "src", project.url )
+                                .attr( "class", "project-container col-xs-12 col-sm-12 col-md-12 col-xl-12" )
+                                .attr( "height", "600px" )
+    ;
+    
+    $("#content").append( contentProject );
+    if ( mainPage == false ) { renderHeader( project.name ) };
+
+}
+
+function renderMainPage () { 
+
+    var content = document.getElementById("content");
+    var navbarHeader = document.getElementById("navbar-header");
+    var projectList = sortProjects( data.projects );
+    var navbarStr = "<a class='navbar-brand' href='javascript:void(0)' onclick='renderProject( " 
+                        + projectList[0].id 
+                        + " )'>"
+                        + projectList[0].name
+                        + "</a> " 
+    ;
+    
+    content.innerHTML = "", navbarHeader.innerHTML = "";
+    
+    renderProject( projectList[0].id, true );
+    renderHeader( "Clever Remark!!!" );
+    navbarHeader.innerHTML = navbarStr;
+
+
+
+}
+
+function renderHeader ( header ) { 
+
+    document.getElementById("header-text").innerHTML = header;
+
+}
+
 
 
 
 
 
 function renderBlank () {
-    
-    
     $("#content")
         .empty()
         .append([
-        
             $("<p></p>")
-            .text( "Sorry! This Section is under construction" )
-            .attr( "id", "error" )
-        
-        
+                .text( "Sorry! This Section is under construction" )
+                .attr( "id", "error" )
         ]);
-    
-
-    
 }
 
-function blogFiller () {
+function blogBox () {
 	
 	$("#content").empty();
 	var blogSection = $("<section></section>")
@@ -89,7 +154,7 @@ function blogFiller () {
 	
 }
 
-function twitterFiller () {
+function twitterBox () {
 	
 	var twitterSection = $("<section></section>")
 		.attr( "class", "twitter-container col-xs-3 col-sm-3 col-md-3 col-lg-3" );
@@ -113,16 +178,13 @@ function twitterFiller () {
 
 
 
-/*
 $(document).ready (function () {
 	
-	// Fill Page on Load
-	// console.log( data );
 	
-	mainFiller();
-	
+    renderMainPage();
+    
+    fillDropdownMenu();
 	
 });
-*/
 
 
