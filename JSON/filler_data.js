@@ -64,23 +64,23 @@ var data = {
             "name": "J-Srogger",
             "url": "missing",
             "desc": "Frogger Made Only Using JS and CSS",
-            "rating": 3
+            "rating": 0
         },
         
         { 
             "id": "1",
             "name": "Word Up",
-            "url": "missing",
+            "url": "https://keadric.github.io/word-up/",
             "desc": "A LaunchCode JS project",
-            "rating": 2
+            "rating": 11
         },
         
         { 
             "id": "2",
             "name": "Flicklist",
-            "url": "missing",
+            "url": "https://keadric.github.io/flicklist/",
             "desc": "A LaunchCode JS project",
-            "rating": 4
+            "rating": 11
         },
         
         { 
@@ -88,7 +88,7 @@ var data = {
             "name": "Wu",
             "url": "https://en.wikipedia.org/wiki/Eastern_Wu",
             "desc": "The Kingdom of Eastern Wu",
-            "rating": 11
+            "rating": 2
         },
         
         { 
@@ -96,7 +96,7 @@ var data = {
             "name": "Shu",
             "url": "https://en.wikipedia.org/wiki/Shu_Han",
             "desc": "The Kingdom of Shu Han",
-            "rating": 12
+            "rating": 3
         },
         
         { 
@@ -104,7 +104,7 @@ var data = {
             "name": "Wei",
             "url": "https://en.wikipedia.org/wiki/Cao_Wei",
             "desc": "The Kingdom of Cao Wei",
-            "rating": 10
+            "rating": 1
         }
     
     ]
