@@ -54,8 +54,10 @@ var data = {
         { 
             "id": "-1",
             "name": "Proper Layout",
-            "url": "",
-            "desc": "",
+            "url": "Link to Hosted URL",
+            "desc": "This project is...",
+            "status": "Working || Broken",
+            "ghLink": "https://github.com/Keadric/",
             "rating": 0
         },
         
@@ -64,6 +66,8 @@ var data = {
             "name": "J-Srogger",
             "url": "missing",
             "desc": "Frogger Made Only Using JS and CSS",
+            "status": "Broken",
+            "ghLink": "",
             "rating": 0
         },
         
@@ -72,6 +76,8 @@ var data = {
             "name": "Word Up",
             "url": "https://keadric.github.io/word-up/",
             "desc": "A LaunchCode JS project",
+            "status": "Broken",
+            "ghLink": "https://keadric.github.io/word-up-public/",
             "rating": 11
         },
         
@@ -80,6 +86,8 @@ var data = {
             "name": "Flicklist",
             "url": "https://keadric.github.io/flicklist/",
             "desc": "A LaunchCode JS project",
+            "status": "Broken",
+            "ghLink": "https://github.com/Keadric/flicklist",
             "rating": 11
         },
         
@@ -88,6 +96,8 @@ var data = {
             "name": "Wu",
             "url": "https://en.wikipedia.org/wiki/Eastern_Wu",
             "desc": "The Kingdom of Eastern Wu",
+            "status": "Working!",
+            "ghLink": "null",
             "rating": 2
         },
         
@@ -96,6 +106,8 @@ var data = {
             "name": "Shu",
             "url": "https://en.wikipedia.org/wiki/Shu_Han",
             "desc": "The Kingdom of Shu Han",
+            "status": "Working!",
+            "ghLink": "null",
             "rating": 3
         },
         
@@ -104,6 +116,8 @@ var data = {
             "name": "Wei",
             "url": "https://en.wikipedia.org/wiki/Cao_Wei",
             "desc": "The Kingdom of Cao Wei",
+            "status": "Working!",
+            "ghLink": "null",
             "rating": 1
         }
     
