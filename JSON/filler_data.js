@@ -76,7 +76,7 @@ var data = {
             "name": "Word Up",
             "url": "https://keadric.github.io/word-up/",
             "desc": "A LaunchCode JS project",
-            "status": "Broken",
+            "status": "Working",
             "ghLink": "https://keadric.github.io/word-up-public/",
             "rating": 11
         },
@@ -87,7 +87,7 @@ var data = {
             "url": "https://keadric.github.io/flicklist/",
             "desc": "A LaunchCode JS project",
             "status": "Broken",
-            "ghLink": "https://github.com/Keadric/flicklist",
+            "ghLink": "https://keadric.github.io/flicklist-public/",
             "rating": 11
         },
         
