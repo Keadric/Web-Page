@@ -1,6 +1,12 @@
 
 // console.log( sortProjects( data.projects ) );
 
+// Empties the Content Div
+function emptyContent() { 
+
+    $("#content").empty();
+
+}
 
 // Renders Blog Page
 function renderBlog () {
@@ -41,7 +47,7 @@ function fillDropdownMenu () {
             // console.log( insertStr );
     }
 
-    insertStr += "<li><a href='javascript:void(0)' onclick='renderBlank()' style='color: #AAAAAA;'> All Projects </a></li>";
+    insertStr += "<li><a href='javascript:void(0)' onclick='projectBox()' style='color: #AAAAAA;'> All Projects </a></li>";
     dropdownMenu.innerHTML = insertStr;
 
 }
@@ -106,6 +112,69 @@ function renderHeader ( header ) {
 }
 
 
+function projectBox () { 
+
+    emptyContent();
+    var projectSection = $("<section></section>")
+                            .attr( "class", "project-container col-xs-12 col-sm-12 col-md-12 col-xl-12" );
+    
+    var projectTable = $("<table></table>")
+                            .attr( "class", "col-xs-12 col-sm-12 col-md-12 col-xl-12" )
+                            .attr( "id", "project-table" )
+                            // This is a multi-line String
+                            .append( '<tr id="project-table-header">                            \
+                                        <th style="text-align: center" colspan="2">Project</th> \
+                                        <th style="text-align: center">Rating</th>              \
+                                        <th style="text-align: center">Description</th>         \
+                                    </tr>' );
+
+    var PROJECTS = data.projects;
+        console.log( PROJECTS )
+    
+    PROJECTS.forEach( function( project ) { 
+
+        console.log( project )
+        
+        if ( project.status == "Working!" ) {
+
+            var projectPicture =    '<td><a href="' + project.url + '" target="_blank"> \
+                                            <img  id="project-image" \
+                                            style="width: 100px" \
+                                            src="' + project.pictureSmall + '" > \
+                                        </a> \
+                                    </td>';
+            var projectTitle = '<td><a id="project-title" href="' + project.url + '" target="_blank">' + project.name + '</a></td>';
+            var projectRank = '<td><span id="project-rank">' + String( project.rating ) + '</span></td>'; 
+            var projectDesc = '<td><p id="project-description">' + project.desc + '</p></td>';
+            
+            var projectFull = $("<tr></tr>")
+                                .attr( "id", "project-element" )
+                                .append( [ projectPicture, projectTitle, projectRank, projectDesc ] );
+            
+            projectTable.append( projectFull );
+
+        } else { 
+
+            // Debug Code
+            // projectTable.append( '<tr><td id="error" colspan="4"> Oh No! This Link is Invalid </td></tr>' )
+
+        }
+        
+        
+        
+        
+        
+
+    });
+    
+    projectSection.append( projectTable );
+    $("#content").append( projectSection );
+    
+    
+    
+
+}
+
 
 
 
@@ -123,9 +192,9 @@ function renderBlank () {
 // Creates the Blog
 function blogBox () {
 	
-	$("#content").empty();
-	var blogSection = $("<section></section>")
-		.attr( "class", "blog-container col-xs-9 col-sm-9 col-md-9 col-lg-9" );
+	emptyContent();
+    var blogSection = $("<section></section>")
+                        .attr( "class", "blog-container col-xs-9 col-sm-9 col-md-9 col-lg-9" );
 	
 	// Retreive Blog Data
 	var BLOG_POSTS = data.blog_posts;
