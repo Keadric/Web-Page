@@ -1,3 +1,4 @@
+
 Body { background: #00FF99; }
 
 nav { background: #888888; text-align: center; }
@@ -12,13 +13,15 @@ hr { border-color: #00FF99; margin: 3px 10px 7px 10px; }
 
 #error { padding: 10px; border-radius: 6px; background: #FFFFFF; color: #DD3300; font-size: 16px; }
 
+.jumbotron { padding-top: 4px; padding-bottom: 4px; }
+
 .fa { font-size: 18px; }
 
-.navbar { background: #DDDDDD; }
+.navbar { background: #F0F0F0; }
 
 .blog-header { font-size: 26px; }
 
-.blog-body { margin-bottom: 5px; }
+.blog-body { margin-bottom: 5px; text-align: left; }
 
 .blog-footer { text-align: right; color: #999999; }
 
@@ -34,4 +37,6 @@ hr { border-color: #00FF99; margin: 3px 10px 7px 10px; }
 .twitter-container li { margin: 10px; }
 
 .twitter-container { background: #FFFFFF; border-radius: 6px; }
+
+.frameCont { border-radius: 100px; }
 

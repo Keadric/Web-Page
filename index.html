@@ -1,5 +1,7 @@
 <head>
   <meta charset="UTF-8">
+  <title> Brett's Webpage </title>
+  <link rel="shortcut icon" type="image/png" href="Images/icon.png">
   
   <link rel="stylesheet prefetch" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -18,25 +20,30 @@
   <script type="text/javascript" src="JS/Main.js"></script>
   
   <link rel="stylesheet" href="CSS/Main_Stylesheet.css">
-  
-  <title> Brett's Webpage </title>
-  <link rel="icon" type="image/png" href="icon.png">
 
 </head>
 
 <body translate="no">
 
-    <div class="container-fluid">
+    <div class="container-fluid col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-xl-offset-2 col-xl-8 text-center">
+      
+      <!-- Jumbotron -->
       <div class="jumbotron text-center" style="margin: 0px; border-radius: 6px 6px 0px 0px;">
-        <h1 id="header-text"> Hello, Friend! </h1>
+        <h1 id="header-text"> Oh No! Javascript is Failing! </h1>
+        <p class="hero-unit"> Thanks for coming to my page ^-^ </p>
       </div>
       
+      <!-- Main Navagation Bar -->
       <nav class="navbar navbar-default" style="border-radius: 0px 0px 6px 6px;">
         <div class="container-fluid">
+          
+          <!-- Landing Page -->
           <div id="navbar-header" class="navbar-header">
             <a class="navbar-brand" href=""> Brett's Crazed Mind </a>
           </div>
-          <ul class="nav navbar-nav">
+          
+          <!-- Inside Links -->
+          <ul class="nav navbar-nav navbar-left">
             <li> <a href="javascript:void(0)" onclick="renderBlog()"> Blog </a></li>
             <li class="dropdown">
             
@@ -54,59 +61,21 @@
             </li>
             <li><a href="javascript:void(0)" onclick="renderAbout()"> About </a></li>
           </ul>
+          
+          <!--  Outside Links  -->
           <ul class="nav navbar-nav navbar-right">
             <li><a id="github-button" href="https://github.com/Keadric" target="_blank"><i class="fa fa-github-alt"></i></a></li>
             <li><a id="youtube-button" href="https://www.youtube.com/channel/UCxPn49k6Io_vq7WZv-xFHuA" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
             <li><a id="twitter-button" href="https://twitter.com/BrettGameDev" target="_blank"><i class="fa fa-twitter"></i></a></li>
           </ul>
+        
         </div>
       </nav>
       
-	  <div id="content">
-	  
-        <div class="row container-fluid">
-
-			<div class="blog-container col-xs-9 col-sm-9 col-md-9 col-lg-9">
-		  
-				<div class="blog-post">
-				  <header class="blog-header" style="font-size: 26px;"> Title </header>
-				  <hr>
-				  <section class="blog-body" style="margin-bottom: 5px;"> words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words </section>
-				  <footer class="blog-footer" style="text-align: right; color: grey;"> Date | Author </footer>
-				</div>
-				
-				<div class="blog-post">
-				  <header class="blog-header" style="font-size: 26px;"> Title </header>
-				  <hr>
-				  <section class="blog-body" style="margin-bottom: 5px;"> words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words </section>
-				  <footer class="blog-footer" style="text-align: right; color: grey;"> Date | Author </footer>
-				</div>
-				
-				<div class="blog-post">
-				  <header class="blog-header" style="font-size: 26px;"> Title </header>
-				  <hr>
-				  <section class="blog-body" style="margin-bottom: 5px;"> words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words </section>
-				  <footer class="blog-footer" style="text-align: right; color: grey;"> Date | Author </footer>
-				</div>
-		  
-			</div>
-			
-			<div class="twitter-container col-xs-3 col-sm-3 col-md-3 col-lg-3">
-			
-			  <a class="twitter-timeline" href="https://twitter.com/BrettGameDev">Tweets by BrettGameDev</a>
-			  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-			
-			</div>
-
-		</div>
-      
-      </div>
+      <!-- JS Controlled Content -->
+	  <div id="content"></div>
       
     </div>
-
-    <!--
-    <footer class="footer"> Project by Brett </footer>
-    -->
  
  </body>
 

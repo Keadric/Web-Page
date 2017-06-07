@@ -1,10 +1,8 @@
-// Javascript File
+
+// console.log( sortProjects( data.projects ) );
 
 
-console.log( sortProjects( data.projects ) );
-
-
-
+// Renders Blog Page
 function renderBlog () {
 
 	blogBox();
@@ -13,6 +11,7 @@ function renderBlog () {
 
 }
 
+// Renders the About Page
 function renderAbout () {
 
     renderBlank();
@@ -20,6 +19,7 @@ function renderAbout () {
 
 }
 
+// Sorts Projects and Inserts the top 3 in the Navagation Bar
 function fillDropdownMenu () { 
 
     var liElem = "<li>", liElemClose = "</li>", linkElemClose = "</a>";
@@ -27,7 +27,7 @@ function fillDropdownMenu () {
     var projectList = sortProjects( data.projects );
     var insertStr = "";
     
-    console.log( "Drop Down: ", projectList );
+        // console.log( "Drop Down: ", projectList );
     
     dropdownMenu.innerHTML = "";
     
@@ -38,7 +38,7 @@ function fillDropdownMenu () {
         
         projectLink = liElem + projectLink + projectName + linkElemClose + liElemClose;
         insertStr += projectLink;
-        console.log( insertStr );
+            // console.log( insertStr );
     }
 
     insertStr += "<li><a href='javascript:void(0)' onclick='renderBlank()' style='color: #AAAAAA;'> All Projects </a></li>";
@@ -56,6 +56,7 @@ function sortProjects ( projectList ) {
 
 }
 
+// Renders Project To Content Div
 function renderProject ( projectId, mainPage ) { 
 
     var content = document.getElementById("content");
@@ -64,7 +65,7 @@ function renderProject ( projectId, mainPage ) {
     
     var contentProject = $("<iframe></iframe>")
                                 .attr( "src", project.url )
-                                .attr( "class", "project-container col-xs-12 col-sm-12 col-md-12 col-xl-12" )
+                                .attr( "class", "frameCont project-container col-xs-12 col-sm-12 col-md-12 col-xl-12" )
                                 .attr( "height", "600px" )
     ;
     
@@ -74,6 +75,7 @@ function renderProject ( projectId, mainPage ) {
 
 }
 
+// Renders Landing Page
 function renderMainPage () { 
 
     var content = document.getElementById("content");
@@ -98,13 +100,16 @@ function renderMainPage () {
 
 }
 
-function renderHeader ( header ) { document.getElementById("header-text").innerHTML = header; }
+// Renders The Unique Header of Each Page
+function renderHeader ( header ) { 
+    document.getElementById("header-text").innerHTML = header; 
+}
 
 
 
 
 
-
+// A Message for Pages that have no Content
 function renderBlank () {
     $("#content")
         .empty()
@@ -115,6 +120,7 @@ function renderBlank () {
         ]);
 }
 
+// Creates the Blog
 function blogBox () {
 	
 	$("#content").empty();
@@ -155,6 +161,7 @@ function blogBox () {
 	
 }
 
+// Adds Twitter To the Page
 function twitterBox () {
 	
 	var twitterSection = $("<section></section>")
