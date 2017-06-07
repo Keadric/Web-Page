@@ -1,5 +1,7 @@
 __Feature List__
 
+  -- LOOK AT GULP --
+  
   - Get User Cookie and Randomly Generate a Hex Color for that User
 	to use as a background for the Site
   - Have a friendly comment loading screen for the user
