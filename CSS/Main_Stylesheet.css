@@ -7,13 +7,19 @@ hr { border-color: #00FF99; margin: 3px 10px 7px 10px; }
 
 table { border-collapse: collapse; }
 
+#header-text { font-size: 36px; }
+
+#header-phrase { font-size: 16px; 
+                 color: #AAAAAA; 
+                 padding-top: 16px; }
+
 #github-button:hover { color: #00C654; }
 
 #youtube-button:hover { color: #E52D27; }
 
 #twitter-button:hover { color: #4099FF; }
 
-#error { padding: 10px; border-radius: 6px; background: #FFFFFF; color: #DD3300; font-size: 16px; }
+#error { background: #FFFFAA; color: #DD3300; }
 
 #project-table { background: #FFFFFF; border-radius: 6px; text-align: center; }
 
@@ -35,7 +41,7 @@ table { border-collapse: collapse; }
 
 #project-rating { font-size: 30px; }
 
-.jumbotron { padding-top: 4px; padding-bottom: 4px; }
+.jumbotron { padding-top: 4px; padding-bottom: 10px; }
 
 .fa { font-size: 18px; }
 

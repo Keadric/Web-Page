@@ -1,5 +1,10 @@
 
-// console.log( sortProjects( data.projects ) );
+var debugMode = false;
+if ( debugMode == true ) { 
+
+    // console.log( data ); 
+
+}
 
 // Empties the Content Div
 function emptyContent() { 
@@ -38,7 +43,7 @@ function fillDropdownMenu () {
     dropdownMenu.innerHTML = "";
     
     // Get the 3 most popular Projects
-    for ( idx = 0; idx < 3 ; idx++ ) {
+    for ( idx = 1; idx < 4 ; idx++ ) {
         var projectLink = "<a hre'javascript:void(0) onclick='renderProject( " + projectList[ idx ].id + " )'>";
         var projectName = projectList[ idx ].name;
         
@@ -47,7 +52,7 @@ function fillDropdownMenu () {
             // console.log( insertStr );
     }
 
-    insertStr += "<li><a href='javascript:void(0)' onclick='projectBox()' style='color: #AAAAAA;'> All Projects </a></li>";
+    insertStr += "<li><a href='javascript:void(0)' onclick='renderProjectBox()' style='color: #AAAAAA;'> All Projects </a></li>";
     dropdownMenu.innerHTML = insertStr;
 
 }
@@ -76,8 +81,13 @@ function renderProject ( projectId, mainPage ) {
     ;
     
     $("#content").append( contentProject );
-    if ( mainPage != true ) { renderHeader( project.name ) }
-    else { renderHeader("Clever Remark!!!") };
+    renderHeader( project.name );
+        
+        //
+        // Old Main Page Render Code
+        //
+        // if ( mainPage != true ) { renderHeader( project.name ) }
+        // else { renderHeader("Clever Remark!!!") };
 
 }
 
@@ -111,8 +121,8 @@ function renderHeader ( header ) {
     document.getElementById("header-text").innerHTML = header; 
 }
 
-
-function projectBox () { 
+// Creates a list of all Projects in Data
+function renderProjectBox () { 
 
     emptyContent();
     var projectSection = $("<section></section>")
@@ -133,30 +143,23 @@ function projectBox () {
     
     PROJECTS.forEach( function( project ) { 
 
-        console.log( project )
+        if ( debugMode == true ) { console.log( project ) } 
         
         if ( project.status == "Working!" ) {
 
-            var projectPicture =    '<td><a href="' + project.url + '" target="_blank"> \
-                                            <img  id="project-image" \
-                                            style="width: 100px" \
-                                            src="' + project.pictureSmall + '" > \
-                                        </a> \
-                                    </td>';
-            var projectTitle = '<td><a id="project-title" href="' + project.url + '" target="_blank">' + project.name + '</a></td>';
-            var projectRank = '<td><span id="project-rank">' + String( project.rating ) + '</span></td>'; 
-            var projectDesc = '<td><p id="project-description">' + project.desc + '</p></td>';
-            
-            var projectFull = $("<tr></tr>")
-                                .attr( "id", "project-element" )
-                                .append( [ projectPicture, projectTitle, projectRank, projectDesc ] );
-            
-            projectTable.append( projectFull );
+            projectTable.append( renderProjectDetails( project ) );
+
+        } else if ( debugMode == true ) { 
+
+            projectTable.append( renderProjectDetails( project ).attr( "id", "error" ) );
 
         } else { 
 
+            //
             // Debug Code
-            // projectTable.append( '<tr><td id="error" colspan="4"> Oh No! This Link is Invalid </td></tr>' )
+            //
+            
+            projectTable.append( '<tr><td id="error" colspan="4"> Oh No! This Link is Invalid </td></tr>' )
 
         }
         
@@ -176,6 +179,25 @@ function projectBox () {
 }
 
 
+function renderProjectDetails ( project ) { 
+
+    var projectPicture =    '<td><a href="' + project.url + '" target="_blank"> \
+                                    <img  id="project-image" \
+                                    style="width: 100px" \
+                                    src="' + project.pictureSmall + '" > \
+                                </a> \
+                            </td>';
+    var projectTitle = '<td><a id="project-title" href="' + project.url + '" target="_blank">' + project.name + '</a></td>';
+    var projectRank = '<td><span id="project-rank">' + String( project.rating ) + '</span></td>'; 
+    var projectDesc = '<td><p id="project-description">' + project.desc + '</p></td>';
+    
+    return $("<tr></tr>")
+        .attr( "id", "project-element" )
+        .append( [ projectPicture, projectTitle, projectRank, projectDesc ] );
+
+ }
+
+
 
 
 // A Message for Pages that have no Content
@@ -189,46 +211,76 @@ function renderBlank () {
         ]);
 }
 
-// Creates the Blog
+// Fill Web Page With Blog Data
 function blogBox () {
-	
+
 	emptyContent();
-    var blogSection = $("<section></section>")
-                        .attr( "class", "blog-container col-xs-9 col-sm-9 col-md-9 col-lg-9" );
+    var BLOG_POSTS = data.blog_posts;
+    var NULL_STATUS = true;
+    var blogSection = $("<section></section>").attr( "class", "blog-container col-xs-9 col-sm-9 col-md-9 col-lg-9" );
 	
-	// Retreive Blog Data
-	var BLOG_POSTS = data.blog_posts;
-	console.log( BLOG_POSTS );
+    if ( debugMode == true ) { console.log( "", BLOG_POSTS ); }
+    if ( debugMode == true ) { console.log( "", blogSection ) }
 	
-	// Fill Web Page With Blog Data
 	BLOG_POSTS.forEach( function( blog ) {
-		
-		console.log( blog );
-		var title = $("<header></header>")
-			.text( blog.title )
-			.attr("class", "blog-header");
-		
-		var lineBreak = $("<hr />");
-		
-		var body = $("<section></section>")
-			.text( blog.content )
-			.attr("class", "blog-body");
-		
-		var footer = $("<footer></footer>")
-			.text( blog.date + " | " + blog.author)
-			.attr("class", "blog-footer");
-		
-		var blogFull = $("<div></div>")
-			.append( [title, lineBreak, body, footer] )
-			.attr("class", "blog-post");
-		
-		blogSection.append( blogFull );
-		
+
+		if ( debugMode == true ) { console.log( blog ); }
+        
+		if ( blog.status != "filler" ) { 
+        
+            NULL_STATUS = false;
+            blogSection.append( createBlogPost( blog ) ); 
+        
+        }
+        else if ( debugMode == true ) { blogSection.append( createBlogPost( blog ) ); }
+
 	});
 	
+    if ( NULL_STATUS == true && debugMode == false ) { 
+
+        blogSection.html( 
+
+            '<div class="blog-post"> \
+                <header class="blog-header"> I\'m Sorry! </header> \
+                <hr /> \
+                <section class="blog-body"> There are no blog posts, please check back later! </section> \
+                <footer class="blog-footer"> 6-9-2017 | Brett Svendsen </footer> \
+            </div>'
+
+        )
+
+    }
+    
 	$("#content").append( blogSection );
-	
+
 }
+
+// Creates the Blog Post
+function createBlogPost ( blog ) { 
+
+    var title = $("<header></header>")
+        .text( blog.title )
+        .attr("class", "blog-header");
+    
+    var lineBreak = $("<hr />");
+    
+    var body = $("<section></section>")
+        .text( blog.content )
+        .attr("class", "blog-body");
+    
+    var footer = $("<footer></footer>")
+        .text( blog.date + " | " + blog.author)
+        .attr("class", "blog-footer");
+    
+    return blogFull = $("<div></div>")
+        .append( [title, lineBreak, body, footer] )
+        .attr("class", "blog-post");
+
+}
+
+
+
+
 
 // Adds Twitter To the Page
 function twitterBox () {
@@ -254,6 +306,10 @@ function twitterBox () {
 
 
 
+
+    //
+    //  TODO: Add fetch() for data and then() render page
+    //
 
 $(document).ready (function () {
 	

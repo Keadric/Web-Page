@@ -3,6 +3,7 @@ var data = {
 
 		{
 			"title": "An Examimation of Filler",
+            "status": "filler",
 			"content": "words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words",
 			"date": "05-04-2017",
 			"author": "Brett Svendsen"
@@ -10,6 +11,7 @@ var data = {
 
 		{
 			"title": "Filler Title",
+            "status": "filler",
 			"content": "words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words",
 			"date": "05-04-2017",
 			"author": "Brett Svendsen"
@@ -17,6 +19,7 @@ var data = {
 
 		{
 			"title": "So Much Filler",
+            "status": "filler",
 			"content": "words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words",
 			"date": "05-04-2017",
 			"author": "Brett Svendsen"
@@ -24,6 +27,7 @@ var data = {
 
 		{
 			"title": "NO MORE FILLER",
+            "status": "filler",
 			"content": "words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words",
 			"date": "05-04-2017",
 			"author": "Brett Svendsen"
@@ -31,6 +35,7 @@ var data = {
 
 		{
 			"title": "I BEG YOU STOP THE MADNESS!!!",
+            "status": "filler",
 			"content": "words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words",
 			"date": "05-04-2017",
 			"author": "Brett Svendsen"
