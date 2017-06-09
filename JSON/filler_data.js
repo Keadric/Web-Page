@@ -65,7 +65,8 @@ var data = {
             "desc": "This project is...",
             "status": "Working || Broken",
             "ghLink": "https://github.com/Keadric/",
-            "rating": 99
+            "dateLastWorkedOn": "??-??-????",
+            "rating": -99
         },
         
         { 
@@ -77,6 +78,7 @@ var data = {
             "desc": "Frogger Made Only Using JS and CSS",
             "status": "Broken",
             "ghLink": "",
+            "dateLastWorkedOn": "??-??-????",
             "rating": 0
         },
         
@@ -89,7 +91,8 @@ var data = {
             "desc": "A LaunchCode JS project",
             "status": "Working!",
             "ghLink": "https://keadric.github.io/word-up-public/",
-            "rating": 5
+            "dateLastWorkedOn": "??-??-????",
+            "rating": 6
         },
         
         { 
@@ -101,6 +104,7 @@ var data = {
             "desc": "A LaunchCode JS project",
             "status": "Working!",
             "ghLink": "https://keadric.github.io/flicklist-public/",
+            "dateLastWorkedOn": "??-??-????",
             "rating": 5
         },
         
@@ -113,6 +117,7 @@ var data = {
             "desc": "The Kingdom of Eastern Wu",
             "status": "Broken",
             "ghLink": "null",
+            "dateLastWorkedOn": "??-??-????",
             "rating": 2
         },
         
@@ -125,6 +130,7 @@ var data = {
             "desc": "The Kingdom of Shu Han",
             "status": "Broken",
             "ghLink": "null",
+            "dateLastWorkedOn": "??-??-????",
             "rating": 3
         },
         
@@ -137,6 +143,7 @@ var data = {
             "desc": "The Kingdom of Cao Wei",
             "status": "Broken",
             "ghLink": "null",
+            "dateLastWorkedOn": "??-??-????",
             "rating": 1
         }
     

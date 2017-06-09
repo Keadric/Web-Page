@@ -67,8 +67,17 @@ function fillDropdownMenu () {
 // Numerical Sort of Project Ratings
 function sortProjects ( PROJECT_LIST ) { 
 
+    PROJECT_LIST.sort( function( a, b ) { 
+
+        var nameA = a.name.toUpperCase(), nameB = b.name.toUpperCase();
+        if ( nameA < nameB ) { return -1; }
+        if ( nameA > nameB ) { return 1; }
+        return 0;
+
+    } )
+    
     return PROJECT_LIST.sort( function ( a, b ) { 
-        // console.log( "A: ", a.rating, "B: ", b.rating ); 
+        if ( debugMode == true ) { console.log( "A: ", a.rating, "B: ", b.rating ); }
         return b.rating - a.rating; 
     });
 
