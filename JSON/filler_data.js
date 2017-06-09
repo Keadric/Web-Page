@@ -65,7 +65,7 @@ var data = {
             "desc": "This project is...",
             "status": "Working || Broken",
             "ghLink": "https://github.com/Keadric/",
-            "rating": 0
+            "rating": 99
         },
         
         { 
@@ -89,7 +89,7 @@ var data = {
             "desc": "A LaunchCode JS project",
             "status": "Working!",
             "ghLink": "https://keadric.github.io/word-up-public/",
-            "rating": 11
+            "rating": 5
         },
         
         { 
@@ -101,7 +101,7 @@ var data = {
             "desc": "A LaunchCode JS project",
             "status": "Working!",
             "ghLink": "https://keadric.github.io/flicklist-public/",
-            "rating": 11
+            "rating": 5
         },
         
         { 
@@ -111,7 +111,7 @@ var data = {
             "picture": "",
             "pictureSmall": "https://pbs.twimg.com/profile_images/610486974990913536/5MdbcHvF.png",
             "desc": "The Kingdom of Eastern Wu",
-            "status": "Working!",
+            "status": "Broken",
             "ghLink": "null",
             "rating": 2
         },
@@ -123,7 +123,7 @@ var data = {
             "picture": "",
             "pictureSmall": "https://pbs.twimg.com/profile_images/610486974990913536/5MdbcHvF.png",
             "desc": "The Kingdom of Shu Han",
-            "status": "Working!",
+            "status": "Broken",
             "ghLink": "null",
             "rating": 3
         },
@@ -135,7 +135,7 @@ var data = {
             "picture": "",
             "pictureSmall": "https://pbs.twimg.com/profile_images/610486974990913536/5MdbcHvF.png",
             "desc": "The Kingdom of Cao Wei",
-            "status": "Working!",
+            "status": "Broken",
             "ghLink": "null",
             "rating": 1
         }

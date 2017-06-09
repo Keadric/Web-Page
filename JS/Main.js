@@ -16,8 +16,8 @@ function emptyContent() {
 // Renders Blog Page
 function renderBlog () {
 
-	blogBox();
-	twitterBox();
+	renderBlogBox();
+	renderTwitterBox();
 	renderHeader( "Blog" );
 
 }
@@ -33,34 +33,41 @@ function renderAbout () {
 // Sorts Projects and Inserts the top 3 in the Navagation Bar
 function fillDropdownMenu () { 
 
-    var liElem = "<li>", liElemClose = "</li>", linkElemClose = "</a>";
     var dropdownMenu = document.getElementById("dropdown");
-    var projectList = sortProjects( data.projects );
-    var insertStr = "";
-    
-        // console.log( "Drop Down: ", projectList );
-    
     dropdownMenu.innerHTML = "";
     
+    var liElem = "<li>", liElemClose = "</li>", linkElemClose = "</a>";
+    var PROJECT_LIST = sortProjects( data.projects );
+    var insertStr = "";
+    
+    if ( debugMode == true ) { console.log( "Drop Down: ", PROJECT_LIST ); }
+    
+    if ( debugMode == true ) { console.log( "Projects: ", PROJECT_LIST.length ); }
+    
     // Get the 3 most popular Projects
-    for ( idx = 1; idx < 4 ; idx++ ) {
-        var projectLink = "<a hre'javascript:void(0) onclick='renderProject( " + projectList[ idx ].id + " )'>";
-        var projectName = projectList[ idx ].name;
-        
-        projectLink = liElem + projectLink + projectName + linkElemClose + liElemClose;
-        insertStr += projectLink;
-            // console.log( insertStr );
+    for ( idx = 1; idx < 4; idx++ ) {
+
+        if ( PROJECT_LIST[ idx ].status == 'Working!' ) { 
+
+            var projectLink = "<a hre'javascript:void(0) onclick='renderProject( " + PROJECT_LIST[ idx ].id + " )'>";
+            var projectName = PROJECT_LIST[ idx ].name;
+            
+            projectLink = liElem + projectLink + projectName + linkElemClose + liElemClose;
+            insertStr += projectLink; 
+
+        }
+
     }
 
-    insertStr += "<li><a href='javascript:void(0)' onclick='renderProjectBox()' style='color: #AAAAAA;'> All Projects </a></li>";
+    insertStr += "<li><a href='javascript:void(0)' onclick='renderProjectsBox()' style='color: #AAAAAA;'> All Projects </a></li>";
     dropdownMenu.innerHTML = insertStr;
 
 }
 
 // Numerical Sort of Project Ratings
-function sortProjects ( projectList ) { 
+function sortProjects ( PROJECT_LIST ) { 
 
-    return projectList.sort( function ( a, b ) { 
+    return PROJECT_LIST.sort( function ( a, b ) { 
         // console.log( "A: ", a.rating, "B: ", b.rating ); 
         return b.rating - a.rating; 
     });
@@ -96,19 +103,19 @@ function renderMainPage () {
 
     var content = document.getElementById("content");
     var navbarHeader = document.getElementById("navbar-header");
-    var projectList = sortProjects( data.projects );
+    var PROJECT_LIST = sortProjects( data.projects );
     var navbarStr = "<a class='navbar-brand' href='javascript:void(0)' onclick='renderProject( " 
-                        + projectList[0].id 
+                        + PROJECT_LIST[0].id 
                         + ", "
                         + true
                         + " )'>"
-                        + projectList[0].name
+                        + PROJECT_LIST[0].name
                         + "</a> " 
     ;
     
     content.innerHTML = "", navbarHeader.innerHTML = "";
     
-    renderProject( projectList[0].id, true );
+    renderProject( PROJECT_LIST[0].id, true );
     renderHeader( "Hello There!" );
     navbarHeader.innerHTML = navbarStr;
 
@@ -122,7 +129,7 @@ function renderHeader ( header ) {
 }
 
 // Creates a list of all Projects in Data
-function renderProjectBox () { 
+function renderProjectsBox () { 
 
     emptyContent();
     var projectSection = $("<section></section>")
@@ -145,27 +152,19 @@ function renderProjectBox () {
 
         if ( debugMode == true ) { console.log( project ) } 
         
-        if ( project.status == "Working!" ) {
-
-            projectTable.append( renderProjectDetails( project ) );
-
-        } else if ( debugMode == true ) { 
-
-            projectTable.append( renderProjectDetails( project ).attr( "id", "error" ) );
-
-        } else { 
-
+        if ( project.status == "Working!" ) { projectTable.append( renderProjectDetails( project ) ); }
+        else if ( debugMode == true ) {  projectTable.append( renderProjectDetails( project ).attr( "id", "error" ) ); }
+        
             //
-            // Debug Code
+            // Old Debug Code
             //
             
-            projectTable.append( '<tr><td id="error" colspan="4"> Oh No! This Link is Invalid </td></tr>' )
-
-        }
-        
-        
-        
-        
+            // if ( debugMode == true ) { 
+            //     projectTable.append( 
+            //         '<tr><td id="error" colspan="4">    \
+            //             Oh No! This Link is Invalid     \
+            //         </td></tr>' ) 
+            // }
         
 
     });
@@ -178,7 +177,7 @@ function renderProjectBox () {
 
 }
 
-
+// Creates each Project 'Cell'
 function renderProjectDetails ( project ) { 
 
     var projectPicture =    '<td><a href="' + project.url + '" target="_blank"> \
@@ -200,19 +199,8 @@ function renderProjectDetails ( project ) {
 
 
 
-// A Message for Pages that have no Content
-function renderBlank () {
-    $("#content")
-        .empty()
-        .append([
-            $("<p></p>")
-                .text( "Sorry! This Section is under construction" )
-                .attr( "id", "error" )
-        ]);
-}
-
 // Fill Web Page With Blog Data
-function blogBox () {
+function renderBlogBox () {
 
 	emptyContent();
     var BLOG_POSTS = data.blog_posts;
@@ -278,12 +266,8 @@ function createBlogPost ( blog ) {
 
 }
 
-
-
-
-
 // Adds Twitter To the Page
-function twitterBox () {
+function renderTwitterBox () {
 	
 	var twitterSection = $("<section></section>")
 		.attr( "class", "twitter-container col-xs-3 col-sm-3 col-md-3 col-lg-3" );
@@ -302,6 +286,18 @@ function twitterBox () {
 	
 	$("#content").append( twitterSection );
 	
+}
+
+// A Message for Pages that have no Content
+function renderBlank () {
+    $("#content")
+        .empty()
+        .append([
+            $("<p></p>")
+                .text( "Sorry! This Section is under construction" )
+                .attr( "id", "error" )
+                .css( { "padding": "10px", "border-radius": "6px" } )
+        ]);
 }
 
 
