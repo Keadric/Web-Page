@@ -205,9 +205,6 @@ function renderProjectDetails ( project ) {
 
  }
 
-
-
-
 // Fill Web Page With Blog Data
 function renderBlogBox () {
 

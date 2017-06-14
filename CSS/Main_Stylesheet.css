@@ -9,9 +9,7 @@ table { border-collapse: collapse; }
 
 #header-text { font-size: 36px; }
 
-#header-phrase { font-size: 16px; 
-                 color: #AAAAAA; 
-                 padding-top: 16px; }
+#header-phrase { font-size: 16px; color: #AAAAAA; padding-top: 16px; }
 
 #github-button:hover { color: #00C654; }
 
@@ -40,6 +38,10 @@ table { border-collapse: collapse; }
 #project-title { font-size: 20px; }
 
 #project-rating { font-size: 30px; }
+
+#hex-holder { float: left; padding-right: 5px; }
+
+#hex-color { width: 200px; height: 20px; float: left; background: #FFFFFF; }
 
 .jumbotron { padding-top: 4px; padding-bottom: 10px; }
 
